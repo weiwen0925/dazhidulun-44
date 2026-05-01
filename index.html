@@ -9,15 +9,37 @@
 <meta name="ClaudeBot" content="noai, noimageai">
 <meta name="GPTBot" content="noai, noimageai">
 <style id="wy-preguard-style">
-/* L4 Pre-guard：origin 檢查通過前，整頁不可見；通過後 JS 移除 */
+/* L4 Pre-guard：origin 檢查通過前，整頁不可見；通過後 JS 移除（僅此規則） */
 html{visibility:hidden!important;}
-/* L3 @media print：列印 / 輸出 PDF 時整頁不可見（不顯示任何警告文，符合「無警告頁面」） */
+</style>
+<style id="wy-print-block">
+/* L3 強化版：列印 / 另存 PDF 時整頁完全消失，無任何痕跡。 */
 @media print{
-  html,body,body *{visibility:hidden!important;}
-  /* 連背景與 iframe 也一併消失 */
-  iframe,img,svg,canvas,video{display:none!important;}
+  html,body{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    background:#fff!important;
+    width:0!important;height:0!important;
+    overflow:hidden!important;
+  }
+  body *,body *::before,body *::after{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    color:transparent!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    text-shadow:none!important;
+    border:0!important;
+  }
+  iframe,img,svg,canvas,video,audio,picture,object,embed{
+    display:none!important;visibility:hidden!important;opacity:0!important;
+    width:0!important;height:0!important;
+  }
 }
 @page{size:auto;margin:0;}
+@page :first{margin:0;}
 </style>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>大智度論 · 卷四十四 · 1～5 品 · 彙整閱讀本</title>
